@@ -21,6 +21,8 @@ def rec(boxes, uni, counter):
     Traverse through the boxes
     """
 
+    if counter >= len(boxes):
+        return uni, counter
     uni.add(counter)
     for k in boxes[counter]:
         if k not in uni:
