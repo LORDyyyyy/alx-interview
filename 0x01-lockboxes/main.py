@@ -15,5 +15,5 @@ print(canUnlockAll(boxes))
 boxes = [[1, 4]]
 print(canUnlockAll(boxes))
 
-boxes = [[]]
+boxes = [[], [1]]
 print(canUnlockAll(boxes))
