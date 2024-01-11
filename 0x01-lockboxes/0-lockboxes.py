@@ -9,7 +9,7 @@ def canUnlockAll(boxes):
     Args
         boxes: is a list of lists
     """
-    uni = [0]
+    uni = set()
     counter = 0
     uni, counter = rec(boxes, uni, counter)
 
@@ -20,11 +20,10 @@ def rec(boxes, uni, counter):
     """
     Traverse through the boxes
     """
+
+    uni.add(counter)
     for k in boxes[counter]:
         if k not in uni:
-            uni.append(k)
-            counter += 1
-
-            uni, counter = rec(boxes, uni, counter)
+            uni, counter = rec(boxes, uni, k)
 
     return uni, counter
