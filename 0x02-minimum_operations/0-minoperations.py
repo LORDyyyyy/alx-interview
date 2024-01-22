@@ -7,15 +7,15 @@ def minOperations(n):
     Read the README file.
     """
     op = 0
-    h = z = 1
+    main_h = z = 1
 
-    while n > h:
-        if n % h == 0:
-            z = h
-            h += h
+    while n > main_h:
+        if n % main_h == 0:
+            z = main_h
+            main_h += main_h
             op += 2
         else:
-            h += z
+            main_h += z
             op += 1
 
     return op
