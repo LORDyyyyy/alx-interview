@@ -17,13 +17,13 @@ def check_input(line):
     return []
 
 
-def print_data(file_size, data={}):
+def print_data(file_size=0, data={}):
     """ doc """
-    print(f'File size: {file_size}')
+    print(f'File size: {file_size}', flush=True)
     for key in sorted(data.keys()):
         if data[key] == 0:
             continue
-        print(f'{key}: {data[key]}')
+        print(f'{key}: {data[key]}', flush=True)
 
 
 def show_status():
