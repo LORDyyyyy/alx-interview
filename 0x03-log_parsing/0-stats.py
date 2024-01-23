@@ -20,10 +20,10 @@ def check_input(line):
 def print_data(file_size, data={}):
     """ doc """
     print(f'File size: {file_size}')
-    for key, val in data.items():
-        if val == 0:
+    for key in sorted(data.keys()):
+        if data[key] == 0:
             continue
-        print(f'{key}: {val}')
+        print(f'{key}: {data[key]}')
 
 
 def show_status():
