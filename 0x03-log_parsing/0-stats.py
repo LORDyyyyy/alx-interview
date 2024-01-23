@@ -5,9 +5,9 @@ import re
 
 def check_input(line):
     """ doc """
-    regex = r'^[.\d]+ - \[\d{4}-\d\d-\d\d \d\d:\d\d:\d\d\.\d{6}\] \
-    "GET \/projects\/260 HTTP\/1\.1" (\d\d\d) (\d+)$'
-    match = re.match(regex, line)
+    regex = r'^[.\d]+ - \[\d{4}-\d\d-\d\d \d\d:\d\d:\d\d\.\d{6}\]'
+    regex2 = r' "GET \/projects\/260 HTTP\/1\.1" (\d\d\d) (\d+)$'
+    match = re.match(regex + regex2, line)
 
     if match:
         status_code = match.group(1)
@@ -40,7 +40,6 @@ def show_status():
         while True:
             line = input()
             data = check_input(line)
-
             if len(data) == 0 or data[0] not in status_code.keys():
                 continue
             status_code[data[0]] += 1
