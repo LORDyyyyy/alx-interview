@@ -5,7 +5,8 @@ import re
 
 def check_input(line):
     """ doc """
-    regex = r'^[.\d]+ - \[\d{4}-\d\d-\d\d \d\d:\d\d:\d\d\.\d{6}\] "GET \/projects\/260 HTTP\/1\.1" (\d\d\d) (\d+)$'
+    regex = r'^[.\d]+ - \[\d{4}-\d\d-\d\d \d\d:\d\d:\d\d\.\d{6}\] \
+    "GET \/projects\/260 HTTP\/1\.1" (\d\d\d) (\d+)$'
     match = re.match(regex, line)
 
     if match:
@@ -56,4 +57,4 @@ def show_status():
 
 if __name__ == "__main__":
     """ main function """
-    showStatus()
+    show_status()
