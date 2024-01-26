@@ -49,7 +49,7 @@ def show_status():
                 print_data(file_size, status_code)
                 counter = 0
 
-    except (KeyboardInterrupt):
+    except (KeyboardInterrupt, EOFError):
         print_data(file_size, status_code)
         counter = 0
 
