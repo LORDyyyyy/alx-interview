@@ -40,11 +40,10 @@ def show_status():
         while True:
             line = input()
             data = check_input(line)
-            if len(data) == 0 or data[0] not in status_code.keys():
+            if len(data) == 0:
                 continue
             status_code[data[0]] += 1
             file_size += data[1]
-            print(data[1])
             counter += 1
             if counter == 10:
                 print_data(file_size, status_code)
