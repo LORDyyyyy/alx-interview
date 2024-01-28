@@ -5,8 +5,8 @@ import re
 
 def check_input(line):
     """ doc """
-    regex = r'^[.\d]+ - \[\d{4}-\d\d-\d\d \d\d:\d\d:\d\d\.\d{6}\]'
-    regex2 = r' "GET \/projects\/260 HTTP\/1\.1" (\d\d\d) (\d+)$'
+    regex = r'^[.\d]+\s*-\s*\[\d{4}-\d\d-\d\d\s*\d\d:\d\d:\d\d\.\d{6}\]'
+    regex2 = r'\s*"GET \/projects\/260 HTTP\/1\.1"\s*(\d\d\d)\s*(\d+)$'
     match = re.match(regex + regex2, line)
 
     if match:
