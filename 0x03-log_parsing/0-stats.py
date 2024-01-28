@@ -6,7 +6,7 @@ import re
 def check_input(line):
     """ doc """
     regex = r'^[.\d]+\s*-\s*\[\d{4}-\d\d-\d\d\s*\d\d:\d\d:\d\d\.\d{6}\]'
-    regex2 = r'\s*"GET \/projects\/260 HTTP\/1\.1"\s*(\d\d\d)\s*(\d+)$'
+    regex2 = r'\s*"GET \/projects\/260 HTTP\/1\.1"\s*(\S+)\s*(\d+)$'
     match = re.match(regex + regex2, line)
 
     if match:
@@ -42,7 +42,8 @@ def show_status():
             data = check_input(line)
             if len(data) == 0:
                 continue
-            status_code[data[0]] += 1
+            if data[0] in status_code.keys():
+                status_code[data[0]] += 1
             file_size += data[1]
             counter += 1
             if counter == 10:
