@@ -20,7 +20,8 @@ def validUTF8(data):
             if countOnes(d) != 1:
                 # the next `counter` bytes, it's most significant bit must be 1
                 return False
-    return True
+    # make sure that the last int of data also it's most significant bit is 0
+    return counter == 0
 
 
 def countOnes(n):
