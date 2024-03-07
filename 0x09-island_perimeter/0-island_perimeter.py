@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """ Island Perimeter"""
-from typing import List
 
 
-def island_perimeter(grid: List[List]) -> int:
+def island_perimeter(grid: list[list]) -> int:
     """
     Returns the perimeter of the island described in grid
 
