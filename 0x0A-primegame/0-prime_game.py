@@ -35,11 +35,10 @@ def isWinner(x, nums):
         """ """
         last_played = 'Maria'
         next_play = 'Ben'
-        i = 0
         curr_prime = 0
         round_nums = nums.copy()
 
-        while i < len(nums):
+        for _ in range(len(nums)):
             if len(round_nums) == 1 or curr_prime == len(prime_set):
                 players[last_played] += 1
                 return
@@ -52,4 +51,8 @@ def isWinner(x, nums):
         prime_set = [i for i in range(1, round + 1) if is_prime(i)]
         play_round(prime_set)
 
-    return None if players['Maria'] == players['Ben'] else max(players, key=lambda k: players[k])
+    if players['Maria'] == players['Ben']:
+        ans = None
+    else:
+        ans = max(players, key=lambda k: players[k])
+    return ans
