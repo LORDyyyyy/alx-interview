@@ -52,7 +52,5 @@ def isWinner(x, nums):
         play_round(prime_set)
 
     if players['Maria'] == players['Ben']:
-        ans = None
-    else:
-        ans = max(players, key=lambda k: players[k])
-    return ans
+        return None
+    return max(players, key=lambda k: players[k])
